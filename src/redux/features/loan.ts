@@ -83,7 +83,10 @@ const loanSlice = createSlice({
             state.step = action.payload
         },
         cleanLoanState: (state) => {
-            Object.assign(state, initialState);
+            Object.assign(state, {
+                loan: initialState.loan,
+                step: initialState.step,
+            });
         }
     }
 });
